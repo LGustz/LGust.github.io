@@ -1,0 +1,91 @@
+
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .profile {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .profile h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        input{
+            border: 2px solid black;
+            height: 20px;
+            width: 100px;
+            border-radius: 6px;
+        }
+        .post {
+            max-width: 300px;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 12px
+        }
+        .post img {
+            width: 100%;
+        }
+        .post .actions {
+            margin-top: 10px;
+        }
+        .post .actions button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        .post:hover{
+            box-shadow: 0px 0px 9px black;
+        }
+      span{
+            padding: 4px
+        }
+    </style>
+</head>
+<body>
+    <!-- Seu código HTML aqui... -->
+
+    <div class="post">
+        <img src="" alt="Foto de Postagem">
+        <div class="actions">
+            <button onclick="increaseLikes(this)">❤️</button>
+            <span class="likeCount">0</span>
+        </div>
+    </div>
+
+    <!-- Outros posts aqui... -->
+
+    <script>
+        function increaseLikes(button) {
+            let likeCount = button.nextElementSibling;
+            let currentLikes = parseInt(likeCount.textContent);
+
+            if (button.classList.contains("liked")) {
+                // Se o botão já foi "curtido", diminua o contador
+                likeCount.textContent = currentLikes - 1;
+            } else {
+                // Se o botão ainda não foi "curtido", aumente o contador
+                likeCount.textContent = currentLikes + 1;
+            }
+
+            // Alterne a classe do botão para indicar se foi "curtido" ou não
+            button.classList.toggle("liked");
+        }
+    </script>
+</body>
+</html>
